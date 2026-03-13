@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email - KOSMO</title>
+  </head>
+  <body data-barba="wrapper">
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a href="/" class="sidebar-item">Prototype</a>
+        <div class="sidebar-section">Pages</div>
+        <a href="/login.html" class="sidebar-item">Login</a>
+        <a href="/email.html" class="sidebar-item">Email</a>
+        <div class="sidebar-section">Components</div>
+        <a href="/button.html" class="sidebar-item">Button</a>
+        <a href="/input.html" class="sidebar-item">Input</a>
+      </nav>
+    </aside>
+    <main data-barba="container" data-barba-namespace="email">
+      <div class="email-page">
+        <p class="email-title">email address?</p>
+        <div class="kosmo-input">
+          <label class="kosmo-input-face">
+            <input type="email" class="kosmo-input-field" />
+            <i data-lucide="corner-down-left" class="kosmo-input-arrow" aria-hidden="true"></i>
+          </label>
+        </div>
+        <img class="email-doodle" src="/src/assets/doodle-28.svg" alt="" />
+      </div>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

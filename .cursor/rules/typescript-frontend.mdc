@@ -1,0 +1,45 @@
+---
+description: TypeScript frontend coding standards for this project
+globs: "**/*.ts"
+alwaysApply: false
+---
+
+# TypeScript Frontend Standards
+
+## Typing
+
+- Enable `strict` mode in tsconfig (already configured).
+- Never use `any`. Use `unknown` and narrow with type guards when the type is uncertain.
+- Prefer `interface` over `type` for object shapes.
+- Use explicit return types on exported functions.
+
+## Project Structure
+
+```
+src/
+  main.ts          # barba.js init and global setup
+  transitions/     # transition modules (one per file)
+  views/           # view hook modules (one per namespace)
+  utils/           # shared helpers
+  style.css        # global styles
+```
+
+## Patterns
+
+- Use ES module imports; no CommonJS (`require`).
+- Prefer `const` over `let`; never use `var`.
+- Use `async/await` over raw Promises where possible.
+- Keep functions small and single-purpose.
+- Co-locate related types with their module.
+
+## Vite Specifics
+
+- Use `import.meta.env` for environment variables (not `process.env`).
+- Static assets in `public/` are served at root path.
+- Use `import` for assets you want processed by Vite (images, SVGs in `src/`).
+
+## DOM Interaction
+
+- Use `document.querySelector` with type parameters: `document.querySelector<HTMLElement>('.selector')`.
+- Prefer data attributes (`data-*`) over class-based selectors for JS hooks.
+- Avoid direct DOM manipulation when barba handles container replacement; use barba lifecycle hooks.

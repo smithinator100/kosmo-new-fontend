@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button - KOSMO</title>
+  </head>
+  <body data-barba="wrapper">
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a href="/" class="sidebar-item">Prototype</a>
+        <div class="sidebar-section">Pages</div>
+        <a href="/login.html" class="sidebar-item">Login</a>
+        <a href="/email.html" class="sidebar-item">Email</a>
+        <div class="sidebar-section">Components</div>
+        <a href="/button.html" class="sidebar-item">Button</a>
+        <a href="/input.html" class="sidebar-item">Input</a>
+      </nav>
+    </aside>
+    <main data-barba="container" data-barba-namespace="button">
+      <div class="component-preview">
+        <h2 class="component-preview-title">Button</h2>
+        <div class="component-preview-section">
+          <span class="component-preview-label">Default</span>
+          <button class="kosmo-btn" type="button">
+            <span class="kosmo-btn-face">Login</span>
+          </button>
+        </div>
+        <div class="component-preview-section">
+          <span class="component-preview-label">Hover</span>
+          <button class="kosmo-btn is-hover" type="button">
+            <span class="kosmo-btn-face">Login</span>
+          </button>
+        </div>
+        <div class="component-preview-section">
+          <span class="component-preview-label">Pressed</span>
+          <button class="kosmo-btn is-pressed" type="button">
+            <span class="kosmo-btn-face">Login</span>
+          </button>
+        </div>
+        <div class="component-preview-section">
+          <span class="component-preview-label">Loading</span>
+          <button class="kosmo-btn is-loading" type="button" disabled>
+            <span class="kosmo-btn-face">
+              <i data-lucide="loader-circle"></i>
+              Login
+            </span>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

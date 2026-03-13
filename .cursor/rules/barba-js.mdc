@@ -1,0 +1,91 @@
+---
+description: Barba.js conventions and patterns for page transitions
+alwaysApply: true
+---
+
+# Barba.js Conventions
+
+## DOM Structure
+
+Every page must include the barba wrapper and container:
+
+```html
+<body data-barba="wrapper">
+  <nav><!-- persistent nav --></nav>
+  <main data-barba="container" data-barba-namespace="page-name">
+    <!-- page content that transitions -->
+  </main>
+  <footer><!-- persistent footer --></footer>
+</body>
+```
+
+- The `wrapper` wraps the entire page and contains the `container`.
+- Content outside the `container` persists across navigations (nav, footer).
+- Content inside the `container` is replaced on each transition.
+- Each page needs a unique `data-barba-namespace` value.
+
+## Initialization
+
+```typescript
+import barba from '@barba/core';
+
+barba.init({
+  transitions: [{
+    name: 'default',
+    leave(data) { /* animate out data.current.container */ },
+    enter(data) { /* animate in data.next.container */ },
+  }],
+});
+```
+
+## Lifecycle Hooks (in order)
+
+1. `beforeAppear` / `appear` / `afterAppear` -- first page load
+2. `before` -- transition starts
+3. `beforeLeave` / `leave` / `afterLeave` -- old page exits
+4. `beforeEnter` / `enter` / `afterEnter` -- new page enters
+5. `after` -- transition ends
+
+Use `leave` and `enter` for animations. Use `beforeEnter` to set up page-specific JS.
+
+## Transitions
+
+- Return a `Promise` or use `async/await` from `leave`/`enter` so barba waits for completion.
+- Use `data.current.container` and `data.next.container` to target elements.
+- Use transition rules (`to`, `from`, `namespace`) to scope transitions to specific pages.
+
+```typescript
+barba.init({
+  transitions: [{
+    name: 'home-fade',
+    to: { namespace: ['home'] },
+    leave: async (data) => fadeOut(data.current.container),
+    enter: async (data) => fadeIn(data.next.container),
+  }],
+});
+```
+
+## Views
+
+Use views for page-specific logic that runs on enter/leave:
+
+```typescript
+barba.init({
+  views: [{
+    namespace: 'home',
+    beforeEnter() { /* init home-specific JS */ },
+    afterLeave() { /* cleanup */ },
+  }],
+});
+```
+
+## Plugins
+
+- `@barba/prefetch` -- prefetches links on hover for faster transitions
+- `@barba/css` -- enables CSS-class-based transitions without JS animation code
+
+## Common Pitfalls
+
+- Always re-init page-specific scripts in `beforeEnter` or `afterEnter` since the DOM is replaced.
+- Avoid `document.addEventListener('DOMContentLoaded', ...)` for per-page logic; use barba hooks instead.
+- Ensure all internal links are standard `<a href="...">` tags (no `target="_blank"` for internal routes).

@@ -1,0 +1,34 @@
+---
+description: Lucide icon conventions for this project
+globs: "**/*.{ts,html,css}"
+alwaysApply: false
+---
+
+# Lucide Icons
+
+## Stroke Width
+
+All Lucide icons must use a stroke width of **1.5px**. This applies everywhere icons are rendered:
+
+- In CSS: `stroke-width: 1.5px` on `[data-lucide]` selectors.
+- In JS: pass `attrs: { 'stroke-width': 1.5 }` to `createIcons()`.
+- Never override stroke width on individual icons unless there is an explicit design requirement.
+
+## Usage
+
+Use the `data-lucide` attribute in HTML and call `createIcons()` from the `lucide` package to render SVGs:
+
+```html
+<i data-lucide="icon-name"></i>
+```
+
+```typescript
+import { createIcons, IconName } from 'lucide';
+createIcons({ icons: { IconName }, attrs: { 'stroke-width': 1.5 } });
+```
+
+Only import the specific icons you need — never import the entire icon set.
+
+## Sizing
+
+Default icon size is 16×16px, set via CSS on `[data-lucide]`. Override with utility classes or explicit width/height when a different size is needed.
