@@ -1,0 +1,153 @@
+/* Kosmo Button — depth-stack button with face + shadow + variants. */
+
+.kosmo-btn {
+  /* Per-variant tokens. Override in `&--{variant}` blocks. */
+  --ks-btn-depth: var(--ks-color-ink);
+  --ks-btn-face: var(--ks-page-color-accent);
+  --ks-btn-overlay: var(--ks-color-overlay-medium);
+  --ks-btn-text: var(--ks-color-ink);
+
+  display: inline-flex;
+  width: 276px;
+  height: var(--ks-space-12);
+  background: var(--ks-btn-depth);
+  border: 2px solid var(--ks-btn-depth);
+  border-radius: var(--ks-radius-xl);
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0 0 var(--ks-space-1);
+  font-family: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  transition:
+    height var(--ks-motion-duration-instant) var(--ks-motion-ease-out-quad),
+    padding var(--ks-motion-duration-instant) var(--ks-motion-ease-out-quad),
+    margin var(--ks-motion-duration-instant) var(--ks-motion-ease-out-quad);
+}
+
+.kosmo-btn--full-width {
+  width: 100%;
+}
+
+.kosmo-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--ks-focus-ring);
+}
+
+.kosmo-btn-face {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  background: var(--ks-btn-face);
+  border: none;
+  border-radius: var(--ks-radius-lg);
+  padding: var(--ks-space-3) var(--ks-space-6);
+  font-family: var(--ks-text-action-family);
+  font-weight: var(--ks-text-action-weight);
+  font-size: var(--ks-text-action-size);
+  line-height: var(--ks-text-action-line-height);
+  color: var(--ks-btn-text);
+  text-align: center;
+  transition: background var(--ks-motion-duration-base) var(--ks-motion-ease-out-quad);
+}
+
+.kosmo-btn-face::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ks-btn-overlay);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity var(--ks-motion-duration-base) var(--ks-motion-ease-out-quad);
+}
+
+.kosmo-btn:hover .kosmo-btn-face::before,
+.kosmo-btn.is-hover .kosmo-btn-face::before {
+  opacity: 1;
+}
+
+.kosmo-btn:active,
+.kosmo-btn.is-pressed {
+  height: 44px;
+  padding-bottom: 0;
+  margin-top: var(--ks-space-1);
+}
+
+.kosmo-btn:active .kosmo-btn-face::before,
+.kosmo-btn.is-pressed .kosmo-btn-face::before {
+  opacity: 1;
+}
+
+.kosmo-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.kosmo-btn-icon--left {
+  margin-right: var(--ks-space-2);
+}
+
+.kosmo-btn-icon--right {
+  margin-left: var(--ks-space-2);
+}
+
+/* ── Variants ───────────────────────────────────── */
+
+.kosmo-btn--primary {
+  --ks-btn-depth: var(--ks-color-ink);
+  --ks-btn-face: var(--ks-page-color-accent);
+  --ks-btn-overlay: var(--ks-color-overlay-medium);
+  --ks-btn-text: var(--ks-color-ink);
+}
+
+.kosmo-btn--pink {
+  --ks-btn-depth: var(--ks-palette-black);
+  --ks-btn-face: #feeaff;
+  --ks-btn-overlay: var(--ks-color-overlay-soft);
+  --ks-btn-text: var(--ks-color-ink);
+}
+
+.kosmo-btn--yellow {
+  --ks-btn-depth: var(--ks-palette-black);
+  --ks-btn-face: #ffee7f;
+  --ks-btn-overlay: var(--ks-color-overlay-soft);
+  --ks-btn-text: var(--ks-color-ink);
+}
+
+.kosmo-btn--outline {
+  --ks-btn-depth: var(--ks-color-ink);
+  --ks-btn-face: var(--ks-page-color-bg);
+  --ks-btn-overlay: var(--ks-color-overlay-soft);
+  --ks-btn-text: var(--ks-color-ink);
+}
+
+/* ── States ─────────────────────────────────────── */
+
+.kosmo-btn.is-loading {
+  pointer-events: none;
+}
+
+.kosmo-btn.is-loading .kosmo-btn-face > .kosmo-btn-spinner,
+.kosmo-btn.is-loading .kosmo-btn-face [data-lucide] {
+  position: absolute;
+  right: var(--ks-space-4);
+  width: var(--ks-space-6);
+  height: var(--ks-space-6);
+  animation: ks-btn-spin 1s linear infinite;
+}
+
+.kosmo-btn[disabled],
+.kosmo-btn.is-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes ks-btn-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

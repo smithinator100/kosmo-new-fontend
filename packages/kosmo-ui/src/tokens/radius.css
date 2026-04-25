@@ -1,0 +1,12 @@
+/* Radius tokens. */
+
+:root {
+  --ks-radius-none: 0;
+  --ks-radius-xs: 2px;
+  --ks-radius-sm: 4px;
+  --ks-radius-md: 6px;
+  --ks-radius-lg: 8px;
+  --ks-radius-xl: 10px;
+  --ks-radius-2xl: 12px;
+  --ks-radius-pill: 999px;
+}

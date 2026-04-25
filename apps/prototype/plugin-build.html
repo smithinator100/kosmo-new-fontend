@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plugin Build - KOSMO</title>
+  </head>
+  <body data-barba="wrapper">
+    <!-- @include sidebar.html -->
+    <main data-barba="container" data-barba-namespace="plugin-build">
+      <div class="plugin-build-page">
+        <h1 class="plugin-build-title">What are we building?</h1>
+        <div class="kosmo-input kosmo-input--large">
+          <label class="kosmo-input-face">
+            <textarea class="kosmo-input-field" rows="6"></textarea>
+          </label>
+        </div>
+        <button class="kosmo-btn kosmo-btn--pink">
+          <span class="kosmo-btn-face">New Plugin</span>
+        </button>
+        <img class="plugin-build-doodle" src="/src/assets/happy-llama.svg" alt="" />
+      </div>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

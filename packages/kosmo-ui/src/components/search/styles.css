@@ -1,0 +1,89 @@
+/* Kosmo Search — search field with leading icon + reactive clear button. */
+
+.kosmo-search {
+  --ks-search-bg: var(--ks-color-ink-mist);
+  --ks-search-bg-focused: var(--ks-color-ink-haze);
+
+  display: flex;
+  align-items: center;
+  height: var(--ks-space-12);
+  padding: 0 var(--ks-space-3);
+  gap: var(--ks-space-2);
+  background: var(--ks-search-bg);
+  border-bottom: 1px solid var(--ks-color-ink-haze);
+  flex-shrink: 0;
+  transition: background var(--ks-motion-duration-fast) var(--ks-motion-ease-out-quad);
+}
+
+.kosmo-search [data-lucide] {
+  width: var(--ks-space-5);
+  height: var(--ks-space-5);
+  color: var(--ks-color-ink);
+  flex-shrink: 0;
+  padding: var(--ks-space-1);
+  box-sizing: content-box;
+}
+
+.kosmo-search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kosmo-search-clear {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ks-space-1);
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: var(--ks-radius-sm);
+  transition: background var(--ks-motion-duration-fast) var(--ks-motion-ease-out-quad);
+}
+
+.kosmo-search-clear:hover {
+  background: var(--ks-color-ink-whisper);
+}
+
+.kosmo-search-clear:focus-visible {
+  outline: none;
+  box-shadow: var(--ks-focus-ring);
+}
+
+.kosmo-search.has-text .kosmo-search-icon {
+  display: none;
+}
+
+.kosmo-search.has-text .kosmo-search-clear {
+  display: flex;
+}
+
+.kosmo-search-field {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: none;
+  font-family: var(--ks-text-ui-family);
+  font-size: var(--ks-text-ui-size);
+  font-weight: var(--ks-text-ui-weight);
+  color: var(--ks-color-ink);
+  outline: none;
+}
+
+.kosmo-search-field::placeholder {
+  color: var(--ks-color-ink);
+  transition: opacity var(--ks-motion-duration-fast) var(--ks-motion-ease-out-quad);
+}
+
+.kosmo-search-field:focus::placeholder {
+  opacity: 0.3;
+}
+
+.kosmo-search.has-text .kosmo-search-field::placeholder {
+  opacity: 0;
+}
+
+.kosmo-search.is-focused {
+  background: var(--ks-search-bg-focused);
+}

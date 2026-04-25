@@ -1,0 +1,12 @@
+/* Shared focus-visible ring used by every interactive primitive.
+   Apply via `&:focus-visible { box-shadow: var(--ks-focus-ring); outline: none; }`
+   or by extending .ks-focus-ring. */
+
+:root {
+  --ks-focus-ring: 0 0 0 2px var(--ks-color-surface), 0 0 0 4px var(--ks-color-focus-ring);
+}
+
+.ks-focus-ring:focus-visible {
+  outline: none;
+  box-shadow: var(--ks-focus-ring);
+}

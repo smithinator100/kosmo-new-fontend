@@ -1,0 +1,72 @@
+/* Semantic typography presets.
+   Apply via `font: var(--ks-text-body);` or by referencing the individual
+   --ks-text-{name}-{property} variables. */
+
+:root {
+  /* Display — page hero copy (login, etc.) */
+  --ks-text-display-family: var(--ks-font-family-display);
+  --ks-text-display-size: var(--ks-font-size-display);
+  --ks-text-display-weight: var(--ks-font-weight-regular);
+  --ks-text-display-line-height: var(--ks-line-height-default);
+
+  /* Title — page titles inside the plugin frame */
+  --ks-text-title-family: var(--ks-font-family-display);
+  --ks-text-title-size: var(--ks-font-size-3xl);
+  --ks-text-title-weight: var(--ks-font-weight-semibold);
+  --ks-text-title-line-height: var(--ks-line-height-default);
+
+  /* Subtitle — secondary headings inside the frame */
+  --ks-text-subtitle-family: var(--ks-font-family-display);
+  --ks-text-subtitle-size: var(--ks-font-size-2xl);
+  --ks-text-subtitle-weight: var(--ks-font-weight-semibold);
+  --ks-text-subtitle-line-height: var(--ks-line-height-default);
+
+  /* Body — main reading text */
+  --ks-text-body-family: var(--ks-font-family-body);
+  --ks-text-body-size: var(--ks-font-size-lg);
+  --ks-text-body-weight: var(--ks-font-weight-medium);
+  --ks-text-body-line-height: var(--ks-line-height-normal);
+
+  /* Input field — large editable text */
+  --ks-text-input-family: var(--ks-font-family-body);
+  --ks-text-input-size: var(--ks-font-size-xl);
+  --ks-text-input-weight: var(--ks-font-weight-medium);
+  --ks-text-input-line-height: var(--ks-line-height-tight);
+
+  /* Action — button / CTA labels */
+  --ks-text-action-family: var(--ks-font-family-display);
+  --ks-text-action-size: var(--ks-font-size-md);
+  --ks-text-action-weight: var(--ks-font-weight-bold);
+  --ks-text-action-line-height: var(--ks-line-height-snug);
+
+  /* UI label — tabs, list items, search */
+  --ks-text-ui-family: var(--ks-font-family-body);
+  --ks-text-ui-size: var(--ks-font-size-md);
+  --ks-text-ui-weight: var(--ks-font-weight-medium);
+  --ks-text-ui-line-height: var(--ks-line-height-snug);
+
+  /* Tab label */
+  --ks-text-tab-family: var(--ks-font-family-body);
+  --ks-text-tab-size: var(--ks-font-size-sm);
+  --ks-text-tab-weight: var(--ks-font-weight-semibold);
+  --ks-text-tab-line-height: var(--ks-line-height-default);
+
+  /* Caption — list item labels (small) */
+  --ks-text-caption-family: var(--ks-font-family-body);
+  --ks-text-caption-size: var(--ks-font-size-md);
+  --ks-text-caption-weight: var(--ks-font-weight-medium);
+  --ks-text-caption-line-height: var(--ks-line-height-snug);
+
+  /* Eyebrow — uppercase section headers */
+  --ks-text-eyebrow-family: var(--ks-font-family-body);
+  --ks-text-eyebrow-size: var(--ks-font-size-2xs);
+  --ks-text-eyebrow-weight: var(--ks-font-weight-medium);
+  --ks-text-eyebrow-line-height: var(--ks-line-height-snug);
+  --ks-text-eyebrow-tracking: var(--ks-letter-spacing-tight);
+
+  /* Verification digit — large centered single character */
+  --ks-text-digit-family: var(--ks-font-family-body);
+  --ks-text-digit-size: var(--ks-font-size-4xl);
+  --ks-text-digit-weight: var(--ks-font-weight-medium);
+  --ks-text-digit-line-height: var(--ks-line-height-default);
+}

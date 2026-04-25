@@ -1,0 +1,157 @@
+/* Kosmo Input — depth-stack input with face + shadow + focus/error states. */
+
+.kosmo-input {
+  /* Per-instance tokens. Override at page level via [data-page] root. */
+  --ks-input-depth: var(--ks-color-ink-faint);
+  --ks-input-border: var(--ks-color-ink);
+  --ks-input-face: var(--ks-page-color-bg);
+  --ks-input-face-active: var(--ks-page-color-bg);
+  --ks-input-text: var(--ks-color-ink);
+  --ks-input-error: var(--ks-color-danger);
+  --ks-input-error-depth: var(--ks-color-danger-soft);
+
+  position: relative;
+  width: 320px;
+  padding-bottom: var(--ks-space-2);
+}
+
+.kosmo-input::before {
+  content: '';
+  position: absolute;
+  top: var(--ks-space-2);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--ks-input-depth);
+  border: 1px solid var(--ks-input-border);
+  border-radius: var(--ks-radius-xl);
+  transition:
+    background var(--ks-motion-duration-base) var(--ks-motion-ease-in-out-cubic),
+    border-color var(--ks-motion-duration-base) var(--ks-motion-ease-in-out-cubic);
+}
+
+.kosmo-input-face {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--ks-space-2);
+  height: 64px;
+  padding: var(--ks-space-3) var(--ks-space-6);
+  background: var(--ks-input-face);
+  border: 1px solid var(--ks-input-border);
+  border-radius: var(--ks-radius-xl);
+  cursor: text;
+  transition:
+    background var(--ks-motion-duration-base) var(--ks-motion-ease-in-out-cubic),
+    border-color var(--ks-motion-duration-base) var(--ks-motion-ease-in-out-cubic);
+}
+
+.kosmo-input-field {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: var(--ks-text-input-family);
+  font-weight: var(--ks-text-input-weight);
+  font-size: var(--ks-text-input-size);
+  line-height: var(--ks-text-input-line-height);
+  color: var(--ks-input-text);
+}
+
+.kosmo-input-field::placeholder {
+  color: var(--ks-color-ink-mute);
+}
+
+.kosmo-input-face [data-lucide],
+.kosmo-input-face .kosmo-input-icon svg {
+  width: var(--ks-space-6);
+  height: var(--ks-space-6);
+  flex-shrink: 0;
+  color: var(--ks-input-text);
+}
+
+.kosmo-input-icon--trailing {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--ks-motion-duration-base) var(--ks-motion-ease-out-quad);
+}
+
+.kosmo-input.has-text .kosmo-input-icon--trailing {
+  opacity: 1;
+}
+
+/* ── Focused ─────────────────────────────────────── */
+
+.kosmo-input.is-focused .kosmo-input-face,
+.kosmo-input:focus-within .kosmo-input-face {
+  background: var(--ks-input-face-active);
+  border-width: 2px;
+  padding: 11px 23px;
+}
+
+.kosmo-input.is-focused::before,
+.kosmo-input:focus-within::before {
+  border-width: 2px;
+}
+
+/* ── Error ───────────────────────────────────────── */
+
+.kosmo-input.is-error::before {
+  background: var(--ks-input-error-depth);
+  border: 2px solid var(--ks-input-error);
+}
+
+.kosmo-input.is-error .kosmo-input-face {
+  background: var(--ks-input-face-active);
+  border: 2px solid var(--ks-input-error);
+  padding: 11px 23px;
+}
+
+.kosmo-input.is-error .kosmo-input-field,
+.kosmo-input.is-error .kosmo-input-face [data-lucide] {
+  color: var(--ks-input-error);
+}
+
+/* ── Large (multiline) ───────────────────────────── */
+
+.kosmo-input--large {
+  padding-bottom: var(--ks-space-1-5);
+}
+
+.kosmo-input--large::before {
+  top: var(--ks-space-1-5);
+}
+
+.kosmo-input--large .kosmo-input-face {
+  height: 208px;
+  align-items: stretch;
+  padding: var(--ks-space-3) var(--ks-space-4);
+}
+
+.kosmo-input--large .kosmo-input-field {
+  resize: none;
+  height: 100%;
+  text-align: left;
+  line-height: var(--ks-line-height-default);
+  padding: 0;
+}
+
+.kosmo-input--large.is-focused::before,
+.kosmo-input--large:focus-within::before {
+  border-width: 1px;
+}
+
+.kosmo-input--large.is-focused .kosmo-input-face,
+.kosmo-input--large:focus-within .kosmo-input-face {
+  border-width: 1px;
+  padding: var(--ks-space-3) var(--ks-space-4);
+}
+
+/* ── Disabled ────────────────────────────────────── */
+
+.kosmo-input.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

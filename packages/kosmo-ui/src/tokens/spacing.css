@@ -1,0 +1,27 @@
+/* Spacing tokens — 4px base scale.
+   Use semantic names (--ks-space-{step}) where step = N means 4 * N px. */
+
+:root {
+  --ks-space-0: 0;
+  --ks-space-px: 1px;
+  --ks-space-0-5: 2px;
+  --ks-space-1: 4px;
+  --ks-space-1-5: 6px;
+  --ks-space-2: 8px;
+  --ks-space-2-5: 10px;
+  --ks-space-3: 12px;
+  --ks-space-4: 16px;
+  --ks-space-5: 20px;
+  --ks-space-6: 24px;
+  --ks-space-7: 28px;
+  --ks-space-8: 32px;
+  --ks-space-9: 36px;
+  --ks-space-10: 40px;
+  --ks-space-12: 48px;
+  --ks-space-14: 56px;
+  --ks-space-16: 64px;
+  --ks-space-19: 76px;
+  --ks-space-20: 80px;
+  --ks-space-24: 96px;
+  --ks-space-30: 125px;
+}

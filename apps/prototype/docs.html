@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Docs - KOSMO</title>
+  </head>
+  <body data-barba="wrapper">
+    <!-- @include sidebar.html -->
+    <main data-barba="container" data-barba-namespace="docs">
+      <article class="component-docs">
+        <header class="component-docs-header">
+          <h1 class="component-docs-title">@kosmo/ui</h1>
+          <p class="component-docs-subtitle">
+            Typed vanilla-TypeScript UI primitives + design tokens. Every
+            component exposes a `create*` factory and an `enhance*` upgrader.
+          </p>
+        </header>
+
+        <section>
+          <h2 class="component-docs-section-title">Components</h2>
+          <div class="docs-index">
+            <a class="docs-index-card" href="/button.html" data-barba-prevent>
+              <span class="docs-index-card-title">Button</span>
+              <span class="docs-index-card-desc">Primary / pink / yellow / outline · loading + disabled states.</span>
+            </a>
+            <a class="docs-index-card" href="/input.html" data-barba-prevent>
+              <span class="docs-index-card-title">Input</span>
+              <span class="docs-index-card-desc">Default + large variants with focus / error states.</span>
+            </a>
+            <a class="docs-index-card" href="/tab-bar.html" data-barba-prevent>
+              <span class="docs-index-card-title">Tab bar</span>
+              <span class="docs-index-card-desc">ARIA tabs pattern with arrow-key navigation.</span>
+            </a>
+            <a class="docs-index-card" href="/list-item.html" data-barba-prevent>
+              <span class="docs-index-card-title">List item</span>
+              <span class="docs-index-card-desc">Leading icon + label + trailing action; danger tone.</span>
+            </a>
+            <a class="docs-index-card" href="/search-input.html" data-barba-prevent>
+              <span class="docs-index-card-title">Search</span>
+              <span class="docs-index-card-desc">Form-wrapped search with clear button.</span>
+            </a>
+            <a class="docs-index-card" href="/sub-header.html" data-barba-prevent>
+              <span class="docs-index-card-title">Sub-header</span>
+              <span class="docs-index-card-desc">Section divider for grouped content.</span>
+            </a>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="component-docs-section-title">Tokens</h2>
+          <div data-docs-root data-component="tokens">
+            <div data-docs="tokens"></div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

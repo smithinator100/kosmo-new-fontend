@@ -1,0 +1,136 @@
+/* Docs scaffolding shared by every component preview page. */
+
+.component-docs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ks-space-10);
+  padding: var(--ks-space-10);
+  max-width: 920px;
+}
+
+.component-docs-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ks-space-2);
+}
+
+.component-docs-title {
+  font-family: var(--ks-font-family-sans);
+  font-size: var(--ks-font-size-3xl);
+  font-weight: var(--ks-font-weight-bold);
+  color: var(--ks-palette-chrome-text);
+}
+
+.component-docs-subtitle {
+  color: var(--ks-palette-chrome-text-muted);
+  font-size: var(--ks-font-size-md);
+  max-width: 64ch;
+}
+
+.component-docs-section-title {
+  font-size: var(--ks-font-size-2xs);
+  font-weight: var(--ks-font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--ks-letter-spacing-widest);
+  color: var(--ks-palette-chrome-text-muted);
+  margin-bottom: var(--ks-space-3);
+}
+
+.component-docs-examples {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--ks-space-6);
+}
+
+.component-docs-examples .component-preview-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ks-space-2);
+  padding: var(--ks-space-4);
+  background: var(--ks-color-surface);
+  border: 1px solid var(--ks-palette-chrome-border);
+  border-radius: var(--ks-radius-lg);
+}
+
+.component-docs-code {
+  margin: 0;
+  padding: var(--ks-space-4);
+  background: var(--ks-palette-chrome-surface);
+  border: 1px solid var(--ks-palette-chrome-border);
+  border-radius: var(--ks-radius-lg);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--ks-font-size-sm);
+  color: var(--ks-palette-chrome-text);
+  overflow-x: auto;
+  line-height: var(--ks-line-height-default);
+}
+
+.component-docs-props {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--ks-font-size-sm);
+  color: var(--ks-palette-chrome-text);
+}
+
+.component-docs-props th,
+.component-docs-props td {
+  padding: var(--ks-space-2) var(--ks-space-3);
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--ks-palette-chrome-border);
+}
+
+.component-docs-props th {
+  font-size: var(--ks-font-size-2xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ks-letter-spacing-widest);
+  color: var(--ks-palette-chrome-text-muted);
+  font-weight: var(--ks-font-weight-semibold);
+}
+
+.component-docs-props code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--ks-font-size-xs);
+  color: var(--ks-palette-chrome-accent);
+  background: var(--ks-palette-chrome-accent-subtle);
+  padding: 0 var(--ks-space-1);
+  border-radius: var(--ks-radius-sm);
+}
+
+/* Docs index. */
+
+.docs-index {
+  display: grid;
+  gap: var(--ks-space-6);
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.docs-index-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ks-space-1);
+  padding: var(--ks-space-4) var(--ks-space-5);
+  background: var(--ks-palette-chrome-surface);
+  border: 1px solid var(--ks-palette-chrome-border);
+  border-radius: var(--ks-radius-lg);
+  color: var(--ks-palette-chrome-text);
+  transition:
+    border-color var(--ks-motion-duration-base) var(--ks-motion-ease-out-quad),
+    transform var(--ks-motion-duration-base) var(--ks-motion-ease-out-quad);
+}
+
+.docs-index-card:hover {
+  border-color: var(--ks-palette-chrome-accent);
+  transform: translateY(-1px);
+  color: var(--ks-palette-chrome-text);
+}
+
+.docs-index-card-title {
+  font-size: var(--ks-font-size-lg);
+  font-weight: var(--ks-font-weight-semibold);
+}
+
+.docs-index-card-desc {
+  font-size: var(--ks-font-size-sm);
+  color: var(--ks-palette-chrome-text-muted);
+}

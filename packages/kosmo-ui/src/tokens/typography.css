@@ -1,0 +1,50 @@
+/* Typography tokens — families, sizes, weights, line-heights.
+   Components reference semantic text presets defined in text-styles.css,
+   not these primitives directly. */
+
+:root {
+  /* ── Families ──────────────────────────────────────── */
+
+  --ks-font-family-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  --ks-font-family-display: 'American Typewriter', 'Times New Roman', serif;
+  --ks-font-family-body: 'Onest', var(--ks-font-family-sans);
+
+  /* ── Sizes (px values, used in t-shirt scale) ─────── */
+
+  --ks-font-size-3xs: 10px;
+  --ks-font-size-2xs: 11px;
+  --ks-font-size-xs: 12px;
+  --ks-font-size-sm: 13px;
+  --ks-font-size-md: 14px;
+  --ks-font-size-lg: 16px;
+  --ks-font-size-xl: 18px;
+  --ks-font-size-2xl: 20px;
+  --ks-font-size-3xl: 22px;
+  --ks-font-size-4xl: 24px;
+  --ks-font-size-display: 48px;
+
+  /* ── Weights ──────────────────────────────────────── */
+
+  --ks-font-weight-regular: 400;
+  --ks-font-weight-medium: 500;
+  --ks-font-weight-semibold: 600;
+  --ks-font-weight-bold: 700;
+  --ks-font-weight-black: 900;
+
+  /* ── Line heights ─────────────────────────────────── */
+
+  --ks-line-height-tight: 1;
+  --ks-line-height-snug: 22px;
+  --ks-line-height-normal: 24px;
+  --ks-line-height-relaxed: 1.6;
+  --ks-line-height-default: normal;
+
+  /* ── Letter spacing ───────────────────────────────── */
+
+  --ks-letter-spacing-tight: 0;
+  --ks-letter-spacing-wide: 0.02em;
+  --ks-letter-spacing-wider: 0.06em;
+  --ks-letter-spacing-widest: 0.08em;
+  --ks-letter-spacing-uppercase: 0.1em;
+}

@@ -1,0 +1,18 @@
+/* Kosmo Sub Header — uppercase eyebrow used to label sections in lists. */
+
+.kosmo-sub-header {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  padding: var(--ks-space-0-5) var(--ks-space-3);
+  background: var(--ks-color-ink-mist);
+  border-bottom: 1px solid var(--ks-color-ink-haze);
+  font-family: var(--ks-text-eyebrow-family);
+  font-size: var(--ks-text-eyebrow-size);
+  font-weight: var(--ks-text-eyebrow-weight);
+  line-height: var(--ks-text-eyebrow-line-height);
+  color: var(--ks-color-ink-soft);
+  letter-spacing: var(--ks-text-eyebrow-tracking);
+  text-transform: uppercase;
+  margin: 0;
+}

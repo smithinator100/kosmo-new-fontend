@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KOSMO</title>
+  </head>
+  <body data-barba="wrapper">
+    <!-- @include sidebar.html -->
+    <main data-barba="container" data-barba-namespace="home">
+      <aside class="transition-menu">
+        <div class="transition-menu-header">Transitions</div>
+        <nav class="transition-menu-nav">
+          <button class="transition-menu-item" data-transition="login-intro">Login Intro</button>
+          <button class="transition-menu-item active" data-transition="login-outro">Login Outro</button>
+          <button class="transition-menu-item" data-transition="email-intro">Email Intro</button>
+          <button class="transition-menu-item" data-transition="email-outro">Email Outro</button>
+          <button class="transition-menu-item" data-transition="verification-intro">Verification Intro</button>
+          <button class="transition-menu-item" data-transition="verification-outro">Verification Outro</button>
+          <button class="transition-menu-item" data-transition="api-key-intro">API Key Intro</button>
+          <button class="transition-menu-item" data-transition="api-key-outro">API Key Outro</button>
+          <button class="transition-menu-item" data-transition="name-intro">Name Intro</button>
+          <button class="transition-menu-item" data-transition="name-outro">Name Outro</button>
+        </nav>
+      </aside>
+      <aside class="anim-settings">
+        <div class="anim-settings-header">
+          <h2 class="anim-settings-title">Animation</h2>
+          <button class="anim-save-btn" id="anim-save">Save</button>
+        </div>
+        <div id="anim-settings-body"></div>
+      </aside>
+
+      <div class="prototype-area">
+        <div class="plugin-container">
+          <div class="plugin-header">
+            <div class="plugin-favicon">K</div>
+            <span class="plugin-title">Kosmo</span>
+            <button class="plugin-close" aria-label="Close">
+              <img src="/src/assets/cross-icon.svg" alt="" width="16" height="16" />
+            </button>
+          </div>
+          <div class="plugin-body">
+            <div class="login-page">
+              <h1 class="login-title">
+                <span class="login-title-bold">Kosmo </span>
+                <span class="login-title-regular">.Codes</span>
+              </h1>
+              <div class="login-hedgehog-wrapper">
+                <img class="login-hedgehog" src="/src/assets/hedgehog.svg" alt="Kosmo hedgehog mascot" />
+              </div>
+              <button class="kosmo-btn login-btn">
+                <span class="kosmo-btn-face">Login</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

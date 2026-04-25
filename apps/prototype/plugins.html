@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plugins - KOSMO</title>
+  </head>
+  <body data-barba="wrapper">
+    <!-- @include sidebar.html -->
+    <main data-barba="container" data-barba-namespace="plugins">
+      <div class="plugins-page">
+        <div class="plugins-page-section">
+          <span class="component-preview-label">Empty</span>
+          <div class="plugins-frame plugins-frame--pink">
+            <div class="kosmo-tab-bar">
+              <button class="kosmo-tab" data-proto-tab="favourites">Favorites</button>
+              <button class="kosmo-tab active" data-proto-tab="plugins">Plugins</button>
+              <button class="kosmo-tab" data-proto-tab="tools">Tools</button>
+              <button class="kosmo-tab" data-proto-tab="settings">Settings</button>
+            </div>
+            <div class="plugins-empty">
+              <img class="plugins-empty-rocket" src="/src/assets/rocket.svg" alt="" />
+              <h2 class="plugins-empty-title">Build a new plugin</h2>
+            </div>
+            <div class="plugins-cta plugins-cta--transparent">
+              <div class="plugins-cta-inner">
+                <button class="kosmo-btn kosmo-btn--pink">
+                  <span class="kosmo-btn-face">New Plugin</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="plugins-page-section">
+          <span class="component-preview-label">Populated</span>
+          <div class="plugins-frame">
+            <div class="kosmo-tab-bar">
+              <button class="kosmo-tab" data-proto-tab="favourites">Favorites</button>
+              <button class="kosmo-tab active" data-proto-tab="plugins">Plugins</button>
+              <button class="kosmo-tab" data-proto-tab="tools">Tools</button>
+              <button class="kosmo-tab" data-proto-tab="settings">Settings</button>
+            </div>
+            <div class="kosmo-search">
+              <input type="text" class="kosmo-search-field" placeholder="Search" />
+              <span class="kosmo-search-icon"><i data-lucide="search"></i></span>
+              <button class="kosmo-search-clear" type="button"><i data-lucide="x"></i></button>
+            </div>
+            <div class="plugins-content">
+              <div class="kosmo-list-item">
+                <i data-lucide="layout-grid"></i>
+                <span class="kosmo-list-item-label">Layout</span>
+                <button class="kosmo-list-item-action"><i data-lucide="settings-2"></i></button>
+              </div>
+              <div class="kosmo-list-item">
+                <i data-lucide="file-text"></i>
+                <span class="kosmo-list-item-label">Content</span>
+                <button class="kosmo-list-item-action"><i data-lucide="settings-2"></i></button>
+              </div>
+              <div class="kosmo-list-item">
+                <i data-lucide="sparkles"></i>
+                <span class="kosmo-list-item-label">Clean-up</span>
+                <button class="kosmo-list-item-action"><i data-lucide="settings-2"></i></button>
+              </div>
+              <div class="kosmo-list-item">
+                <i data-lucide="wand-2"></i>
+                <span class="kosmo-list-item-label">Effects</span>
+                <button class="kosmo-list-item-action"><i data-lucide="settings-2"></i></button>
+              </div>
+              <div class="kosmo-list-item">
+                <i data-lucide="palette"></i>
+                <span class="kosmo-list-item-label">Color</span>
+                <button class="kosmo-list-item-action"><i data-lucide="settings-2"></i></button>
+              </div>
+              <div class="kosmo-list-item">
+                <i data-lucide="shapes"></i>
+                <span class="kosmo-list-item-label">Shapes</span>
+                <button class="kosmo-list-item-action"><i data-lucide="settings-2"></i></button>
+              </div>
+              <div class="kosmo-list-item">
+                <i data-lucide="wrench"></i>
+                <span class="kosmo-list-item-label">Utilities</span>
+                <button class="kosmo-list-item-action"><i data-lucide="settings-2"></i></button>
+              </div>
+              <div class="kosmo-list-item">
+                <i data-lucide="type"></i>
+                <span class="kosmo-list-item-label">Text</span>
+                <button class="kosmo-list-item-action"><i data-lucide="settings-2"></i></button>
+              </div>
+              <div class="kosmo-list-item">
+                <i data-lucide="layout-grid"></i>
+                <span class="kosmo-list-item-label">Layout</span>
+                <button class="kosmo-list-item-action"><i data-lucide="settings-2"></i></button>
+              </div>
+            </div>
+            <div class="plugins-scrollbar"><div class="plugins-scrollbar-thumb"></div></div>
+            <div class="plugins-cta">
+              <div class="plugins-cta-inner">
+                <button class="kosmo-btn kosmo-btn--pink">
+                  <span class="kosmo-btn-face">New Plugin</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

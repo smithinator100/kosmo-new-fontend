@@ -1,0 +1,50 @@
+/* Name page palette + layout. */
+
+[data-barba-namespace='name'],
+.name-page {
+  --ks-page-color-bg: #f7f7ff;
+  --ks-page-color-accent: #D8D8F0;
+  --ks-page-color-tab-indicator: var(--ks-page-color-accent);
+}
+
+[data-barba-namespace='name'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ks-page-color-accent);
+}
+
+.name-page {
+  position: relative;
+  width: 400px;
+  height: 560px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--ks-space-14) var(--ks-space-10) var(--ks-space-10);
+  gap: var(--ks-space-4);
+  background: var(--ks-page-color-bg);
+  border-radius: var(--ks-radius-2xl);
+  overflow: hidden;
+}
+
+.name-title {
+  font-family: var(--ks-font-family-display);
+  font-weight: var(--ks-font-weight-semibold);
+  font-size: var(--ks-font-size-2xl);
+  line-height: var(--ks-line-height-default);
+  color: var(--ks-palette-black);
+}
+
+.name-page .kosmo-input {
+  width: 100%;
+  max-width: 320px;
+}
+
+.name-doodle {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  left: -16px;
+  top: 327px;
+  pointer-events: none;
+}

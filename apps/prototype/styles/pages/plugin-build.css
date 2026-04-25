@@ -1,0 +1,61 @@
+/* Plugin Build page palette + layout. */
+
+[data-barba-namespace='plugin-build'],
+.plugin-build-page {
+  --ks-page-color-bg: #fff5ff;
+  --ks-page-color-accent: #fff5ff;
+  --ks-page-color-tab-indicator: var(--ks-page-color-accent);
+}
+
+[data-barba-namespace='plugin-build'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F7D0F9;
+}
+
+.plugin-build-page {
+  position: relative;
+  width: 400px;
+  height: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ks-space-4);
+  padding: var(--ks-space-14) var(--ks-space-10) var(--ks-space-10);
+  background: var(--ks-page-color-bg);
+  border-radius: var(--ks-radius-2xl);
+  overflow: hidden;
+}
+
+.plugin-build-title {
+  position: relative;
+  z-index: 1;
+  font-family: var(--ks-font-family-display);
+  font-size: var(--ks-font-size-2xl);
+  font-weight: var(--ks-font-weight-semibold);
+  line-height: var(--ks-line-height-default);
+  color: var(--ks-palette-black);
+}
+
+.plugin-build-page .kosmo-input {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.plugin-build-page .kosmo-btn {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.plugin-build-doodle {
+  position: absolute;
+  left: 72px;
+  top: 396px;
+  z-index: 0;
+  width: 256px;
+  height: 260px;
+  transform: rotate(-0.35deg);
+  pointer-events: none;
+}

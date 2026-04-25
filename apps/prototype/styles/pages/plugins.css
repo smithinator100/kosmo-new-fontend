@@ -1,0 +1,157 @@
+/* Plugins page palette + layout. */
+
+[data-barba-namespace='plugins'],
+.plugins-page,
+.plugins-frame {
+  --ks-page-color-bg: #feeaff;
+  --ks-page-color-accent: #dc22e5;
+  --ks-page-color-tab-indicator: var(--ks-page-color-accent);
+}
+
+[data-barba-namespace='plugins'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F7D0F9;
+}
+
+.plugins-page {
+  display: flex;
+  gap: var(--ks-space-8);
+  flex-wrap: wrap;
+}
+
+.plugins-page-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ks-space-2);
+}
+
+.plugins-frame {
+  width: 400px;
+  height: 560px;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--ks-radius-2xl);
+  border: 1px solid var(--ks-color-ink-faint);
+  overflow: hidden;
+  position: relative;
+  background: var(--ks-color-surface);
+}
+
+.plugins-frame--pink {
+  background: var(--ks-page-color-bg);
+}
+
+.plugins-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ks-space-6);
+  padding-bottom: var(--ks-space-20);
+}
+
+.plugins-empty-rocket {
+  width: 203px;
+  height: 203px;
+}
+
+.plugins-empty-title {
+  font-family: var(--ks-font-family-display);
+  font-size: var(--ks-font-size-3xl);
+  font-weight: var(--ks-font-weight-semibold);
+  color: var(--ks-color-ink);
+  text-align: center;
+}
+
+.plugins-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--ks-color-surface);
+  padding-bottom: var(--ks-space-30);
+  scrollbar-width: none;
+}
+
+.plugins-content::-webkit-scrollbar {
+  display: none;
+}
+
+.plugins-frame .plugins-scrollbar {
+  position: absolute;
+  top: var(--ks-space-24);
+  right: 0;
+  bottom: 0;
+  width: var(--ks-space-1);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.plugins-scrollbar-thumb {
+  position: absolute;
+  right: 0;
+  width: var(--ks-space-1);
+  min-height: var(--ks-space-5);
+  background: var(--ks-color-ink-quiet);
+  border-radius: 0;
+  pointer-events: auto;
+  opacity: 0;
+  transition:
+    opacity var(--ks-motion-duration-base) var(--ks-motion-ease-out-quad),
+    background var(--ks-motion-duration-fast) var(--ks-motion-ease-out-quad);
+}
+
+.plugins-content:hover ~ .plugins-scrollbar .plugins-scrollbar-thumb {
+  opacity: 1;
+}
+
+.plugins-scrollbar-thumb:hover {
+  background: var(--ks-color-ink-mute);
+}
+
+.plugins-cta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--ks-space-30);
+}
+
+.plugins-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  mask-image: linear-gradient(to bottom, transparent, black);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black);
+}
+
+.plugins-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0%, var(--ks-color-surface) 50%);
+}
+
+.plugins-cta--transparent::before,
+.plugins-cta--transparent::after {
+  display: none;
+}
+
+.plugins-cta-inner {
+  position: relative;
+  z-index: 1;
+  width: 328px;
+}
+
+.plugins-cta-inner .kosmo-btn {
+  width: 100%;
+}

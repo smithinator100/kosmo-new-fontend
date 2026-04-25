@@ -1,0 +1,297 @@
+[
+  {
+    "name": "button",
+    "displayName": "Button",
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "optional": false,
+        "description": "Visible label text. Always required for accessibility — even icon-only buttons need a label (use `aria-label` via `ariaLabel`)."
+      },
+      {
+        "name": "variant",
+        "type": "ButtonVariant",
+        "optional": true
+      },
+      {
+        "name": "state",
+        "type": "ButtonState",
+        "optional": true
+      },
+      {
+        "name": "type",
+        "type": "'button' | 'submit' | 'reset'",
+        "optional": true,
+        "description": "Native button type. Defaults to `'button'` to avoid accidental form submits."
+      },
+      {
+        "name": "iconLeft",
+        "type": "LucideIconName",
+        "optional": true
+      },
+      {
+        "name": "iconRight",
+        "type": "LucideIconName",
+        "optional": true
+      },
+      {
+        "name": "ariaLabel",
+        "type": "string",
+        "optional": true,
+        "description": "Override the accessible name when the visible label is decorative."
+      },
+      {
+        "name": "onClick",
+        "type": "(e: MouseEvent) => void",
+        "optional": true,
+        "description": "Optional click handler. Wired up via `addEventListener('click', …)`."
+      },
+      {
+        "name": "fullWidth",
+        "type": "boolean",
+        "optional": true,
+        "description": "Stretch to fill the parent's width."
+      }
+    ]
+  },
+  {
+    "name": "input",
+    "displayName": "Input",
+    "props": [
+      {
+        "name": "name",
+        "type": "string",
+        "optional": true,
+        "description": "Optional `name` attribute for form serialization."
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "optional": true,
+        "description": "Initial value."
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "optional": true
+      },
+      {
+        "name": "variant",
+        "type": "InputVariant",
+        "optional": true
+      },
+      {
+        "name": "state",
+        "type": "InputState",
+        "optional": true,
+        "description": "Initial state. Note that focus state is generally driven automatically by\n`:focus-within` / `focus`/`blur` listeners; only set this explicitly if you\nneed to force a state without focus (e.g. inline preview screens)."
+      },
+      {
+        "name": "type",
+        "type": "'text' | 'email' | 'password' | 'tel' | 'number' | 'search' | 'url'",
+        "optional": true,
+        "description": "Native input type. Ignored when `variant === 'large'`."
+      },
+      {
+        "name": "inputMode",
+        "type": "'text' | 'numeric' | 'tel' | 'email' | 'url' | 'search' | 'decimal' | 'none'",
+        "optional": true
+      },
+      {
+        "name": "maxLength",
+        "type": "number",
+        "optional": true
+      },
+      {
+        "name": "rows",
+        "type": "number",
+        "optional": true
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "optional": true,
+        "description": "Accessible label. Either this or `ariaLabelledBy` is required."
+      },
+      {
+        "name": "ariaLabel",
+        "type": "string",
+        "optional": true
+      },
+      {
+        "name": "ariaLabelledBy",
+        "type": "string",
+        "optional": true
+      },
+      {
+        "name": "trailingIcon",
+        "type": "LucideIconName",
+        "optional": true,
+        "description": "Lucide icon shown on the trailing edge (e.g. arrow indicator)."
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "optional": true,
+        "description": "Disabled state."
+      },
+      {
+        "name": "readOnly",
+        "type": "boolean",
+        "optional": true,
+        "description": "Read-only state."
+      },
+      {
+        "name": "onChange",
+        "type": "(value: string, event: Event) => void",
+        "optional": true,
+        "description": "Fired on every input. Receives the new value."
+      },
+      {
+        "name": "onFocus",
+        "type": "(event: FocusEvent) => void",
+        "optional": true,
+        "description": "Fired on focus."
+      },
+      {
+        "name": "onBlur",
+        "type": "(event: FocusEvent) => void",
+        "optional": true,
+        "description": "Fired on blur."
+      },
+      {
+        "name": "onKeyDown",
+        "type": "(event: KeyboardEvent) => void",
+        "optional": true,
+        "description": "Fired on keydown."
+      }
+    ]
+  },
+  {
+    "name": "list-item",
+    "displayName": "ListItem",
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "optional": false
+      },
+      {
+        "name": "icon",
+        "type": "LucideIconName",
+        "optional": true,
+        "description": "Lucide icon shown on the leading edge."
+      },
+      {
+        "name": "tone",
+        "type": "ListItemTone",
+        "optional": true
+      },
+      {
+        "name": "action",
+        "type": "ListItemAction",
+        "optional": true,
+        "description": "Trailing affordance — usually a settings/edit button."
+      },
+      {
+        "name": "onClick",
+        "type": "(e: MouseEvent) => void",
+        "optional": true,
+        "description": "Make the entire row clickable."
+      },
+      {
+        "name": "interactive",
+        "type": "boolean",
+        "optional": true,
+        "description": "Pass `true` to render as a `<button>` instead of a `<div>` (recommended when `onClick` is set)."
+      }
+    ]
+  },
+  {
+    "name": "search",
+    "displayName": "Search",
+    "props": [
+      {
+        "name": "placeholder",
+        "type": "string",
+        "optional": true
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "optional": true
+      },
+      {
+        "name": "ariaLabel",
+        "type": "string",
+        "optional": true
+      },
+      {
+        "name": "onChange",
+        "type": "(value: string, event: Event) => void",
+        "optional": true,
+        "description": "Fires on every input."
+      },
+      {
+        "name": "onSubmit",
+        "type": "(value: string) => void",
+        "optional": true,
+        "description": "Fires on Enter / submit."
+      },
+      {
+        "name": "onClear",
+        "type": "() => void",
+        "optional": true,
+        "description": "Fires when the clear button is pressed."
+      }
+    ]
+  },
+  {
+    "name": "sub-header",
+    "displayName": "SubHeader",
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "optional": false,
+        "description": "Visible label. Rendered uppercase via CSS — pass natural case."
+      },
+      {
+        "name": "as",
+        "type": "'h2' | 'h3' | 'h4' | 'div'",
+        "optional": true,
+        "description": "Heading level — used for screen-reader semantics. Defaults to `'h3'`.\nPass `'div'` if the sub-header is purely decorative."
+      }
+    ]
+  },
+  {
+    "name": "tab-bar",
+    "displayName": "TabBar",
+    "props": [
+      {
+        "name": "items",
+        "type": "readonly TabItem[]",
+        "optional": false,
+        "description": "Ordered list of tabs."
+      },
+      {
+        "name": "activeId",
+        "type": "string",
+        "optional": true,
+        "description": "Currently active tab id. Falls back to the first non-disabled tab."
+      },
+      {
+        "name": "ariaLabel",
+        "type": "string",
+        "optional": true,
+        "description": "Accessible label for the tablist (e.g. \"Plugin frame tabs\")."
+      },
+      {
+        "name": "onChange",
+        "type": "(id: string, item: TabItem) => void",
+        "optional": true
+      }
+    ]
+  }
+]

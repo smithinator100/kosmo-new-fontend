@@ -1,0 +1,89 @@
+/* Kosmo List Item — leading icon · label · trailing action. */
+
+.kosmo-list-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: var(--ks-space-12);
+  padding: 0 var(--ks-space-3);
+  gap: var(--ks-space-2);
+  border-bottom: 1px solid var(--ks-color-ink-haze);
+  cursor: pointer;
+  color: var(--ks-color-ink);
+  line-height: var(--ks-line-height-snug);
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  text-align: left;
+  font: inherit;
+  transition: background var(--ks-motion-duration-fast) var(--ks-motion-ease-out-quad);
+}
+
+button.kosmo-list-item {
+  font-family: var(--ks-text-ui-family);
+  font-size: var(--ks-text-ui-size);
+  font-weight: var(--ks-text-ui-weight);
+}
+
+.kosmo-list-item:hover,
+.kosmo-list-item.is-hover {
+  background: var(--ks-color-ink-mist);
+}
+
+.kosmo-list-item:focus-visible {
+  outline: none;
+  box-shadow: var(--ks-focus-ring);
+}
+
+.kosmo-list-item-icon,
+.kosmo-list-item > [data-lucide]:first-child {
+  width: var(--ks-space-5);
+  height: var(--ks-space-5);
+  color: var(--ks-color-ink);
+  flex-shrink: 0;
+}
+
+.kosmo-list-item-label {
+  flex: 1;
+  font-family: var(--ks-text-caption-family);
+  font-size: var(--ks-text-caption-size);
+  font-weight: var(--ks-text-caption-weight);
+  color: var(--ks-color-ink);
+  line-height: var(--ks-text-caption-line-height);
+}
+
+.kosmo-list-item-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ks-space-1);
+  border-radius: var(--ks-radius-sm);
+  border: none;
+  background: none;
+  color: var(--ks-color-ink);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background var(--ks-motion-duration-fast) var(--ks-motion-ease-out-quad);
+}
+
+.kosmo-list-item-action [data-lucide] {
+  width: var(--ks-space-5);
+  height: var(--ks-space-5);
+}
+
+.kosmo-list-item-action:hover {
+  background: var(--ks-color-ink-whisper);
+}
+
+.kosmo-list-item-action:focus-visible {
+  outline: none;
+  box-shadow: var(--ks-focus-ring);
+}
+
+/* ── Tone: danger ───────────────────────────────── */
+
+.kosmo-list-item--danger .kosmo-list-item-label {
+  text-align: right;
+  color: var(--ks-color-danger);
+}

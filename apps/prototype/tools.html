@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tools - KOSMO</title>
+  </head>
+  <body data-barba="wrapper">
+    <!-- @include sidebar.html -->
+    <main data-barba="container" data-barba-namespace="tools">
+      <div class="tools-page">
+        <div class="tools-frame">
+          <div class="kosmo-tab-bar">
+            <button class="kosmo-tab" data-proto-tab="favourites">Favorites</button>
+            <button class="kosmo-tab" data-proto-tab="plugins">Plugins</button>
+            <button class="kosmo-tab active" data-proto-tab="tools">Tools</button>
+            <button class="kosmo-tab" data-proto-tab="settings">Settings</button>
+          </div>
+          <div class="tools-content">
+            <div class="kosmo-sub-header">COPY DESIGN STYLES</div>
+            <div class="kosmo-list-item">
+              <i data-lucide="copy"></i>
+              <span class="kosmo-list-item-label">Copy all styles</span>
+            </div>
+            <div class="kosmo-list-item">
+              <i data-lucide="type"></i>
+              <span class="kosmo-list-item-label">Copy text styles</span>
+            </div>
+            <div class="kosmo-list-item">
+              <i data-lucide="paintbrush"></i>
+              <span class="kosmo-list-item-label">Copy strokes &amp; fills</span>
+            </div>
+            <div class="kosmo-list-item">
+              <i data-lucide="sparkles"></i>
+              <span class="kosmo-list-item-label">Copy effects</span>
+            </div>
+            <div class="kosmo-sub-header">PASTE DESIGN STYLES</div>
+            <div class="kosmo-list-item">
+              <i data-lucide="clipboard-paste"></i>
+              <span class="kosmo-list-item-label">Paste styles</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

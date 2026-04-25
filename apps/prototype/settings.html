@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - KOSMO</title>
+  </head>
+  <body data-barba="wrapper">
+    <!-- @include sidebar.html -->
+    <main data-barba="container" data-barba-namespace="settings">
+      <div class="settings-page">
+        <div class="settings-frame">
+          <div class="kosmo-tab-bar">
+            <button class="kosmo-tab" data-proto-tab="favourites">Favorites</button>
+            <button class="kosmo-tab" data-proto-tab="plugins">Plugins</button>
+            <button class="kosmo-tab" data-proto-tab="tools">Tools</button>
+            <button class="kosmo-tab active" data-proto-tab="settings">Settings</button>
+          </div>
+          <div class="settings-content">
+            <div class="kosmo-sub-header">Account</div>
+            <div class="kosmo-list-item">
+              <span class="kosmo-list-item-label">API keys</span>
+              <i data-lucide="chevron-right"></i>
+            </div>
+            <div class="kosmo-list-item">
+              <span class="kosmo-list-item-label">email@gmail.com</span>
+              <span class="kosmo-list-item-label kosmo-list-item-label--danger">Sign out</span>
+            </div>
+            <div class="kosmo-sub-header">INTERNAL</div>
+            <div class="kosmo-list-item">
+              <span class="kosmo-list-item-label">Debug mode</span>
+            </div>
+            <div class="kosmo-list-item">
+              <span class="kosmo-list-item-label">Test mode</span>
+              <i data-lucide="chevron-right"></i>
+            </div>
+            <div class="kosmo-list-item">
+              <span class="kosmo-list-item-label">API server</span>
+              <i data-lucide="chevron-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

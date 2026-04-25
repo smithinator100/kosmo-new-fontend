@@ -1,0 +1,70 @@
+/**
+ * Login page palette + layout.
+ *
+ * Page palette is the only place these hex literals are allowed; everything
+ * downstream consumes the --ks-page-color-* aliases.
+ */
+
+/* Palette tokens live on BOTH the standalone-page root (`<main data-barba-namespace>`)
+   AND the inner page class so the same palette applies whether the page is
+   visited at /login.html or rendered inside the prototype's .plugin-body. */
+[data-barba-namespace='login'],
+.login-page {
+  --ks-page-color-bg: #B6EBFF;
+  --ks-page-color-accent: #88e0ff;
+  --ks-page-color-tab-indicator: var(--ks-page-color-accent);
+}
+
+[data-barba-namespace='login'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ks-page-color-bg);
+  background: var(--ks-page-color-bg);
+}
+
+.login-page {
+  width: 400px;
+  height: 560px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--ks-space-10);
+  gap: var(--ks-space-6);
+  color: var(--ks-page-color-bg);
+  background: var(--ks-page-color-bg);
+  border-radius: var(--ks-radius-2xl);
+}
+
+.login-title {
+  font-family: var(--ks-font-family-display);
+  font-size: var(--ks-font-size-display);
+  line-height: var(--ks-line-height-default);
+  color: var(--ks-palette-black);
+  font-weight: var(--ks-font-weight-regular);
+}
+
+.login-title-bold {
+  display: block;
+  font-weight: var(--ks-font-weight-semibold);
+}
+
+.login-title-regular {
+  display: block;
+}
+
+.login-hedgehog-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-hedgehog {
+  width: 202px;
+  height: 202px;
+}
+
+.kosmo-btn.login-btn {
+  width: 100%;
+}

@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "types": ["vite/client"],
+    "paths": {
+      "@kosmo/ui": ["../../packages/kosmo-ui/src/index.ts"],
+      "@kosmo/ui/styles.css": ["../../packages/kosmo-ui/src/index.css"],
+      "@kosmo/ui/tokens.css": ["../../packages/kosmo-ui/src/tokens/index.css"],
+      "@kosmo/ui/tokens": ["../../packages/kosmo-ui/src/tokens/index.ts"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "../../packages/kosmo-ui/src/**/*.ts"
+  ],
+  "exclude": [
+    "../../packages/kosmo-ui/src/**/*.test.ts",
+    "../../packages/kosmo-ui/src/**/*.types.test.ts"
+  ]
+}

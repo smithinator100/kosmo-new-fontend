@@ -1,0 +1,120 @@
+/* Favourites page palette + layout. */
+
+[data-barba-namespace='favourites'],
+.favourites-page,
+.favourites-frame {
+  --ks-page-color-bg: #fff7f8;
+  --ks-page-color-accent: #ce6772;
+  --ks-page-color-tab-indicator: var(--ks-page-color-accent);
+}
+
+[data-barba-namespace='favourites'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F9D4D6;
+}
+
+.favourites-page {
+  display: flex;
+  gap: var(--ks-space-8);
+  flex-wrap: wrap;
+}
+
+.favourites-page-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ks-space-2);
+}
+
+.favourites-frame {
+  width: 400px;
+  height: 560px;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--ks-radius-2xl);
+  border: 1px solid var(--ks-color-ink-faint);
+  overflow: hidden;
+  position: relative;
+  background: var(--ks-page-color-bg);
+}
+
+.favourites-frame--pink {
+  background: var(--ks-page-color-bg);
+}
+
+.favourites-frame .kosmo-tab-bar {
+  background: var(--ks-page-color-bg);
+}
+
+.favourites-frame .kosmo-search {
+  background: #fff0f2;
+}
+
+.favourites-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ks-space-6);
+  padding-bottom: var(--ks-space-10);
+}
+
+.favourites-empty-cake {
+  width: 203px;
+  height: 203px;
+}
+
+.favourites-empty-title {
+  font-family: var(--ks-font-family-display);
+  font-size: var(--ks-font-size-3xl);
+  font-weight: var(--ks-font-weight-semibold);
+  color: var(--ks-color-ink);
+  text-align: center;
+}
+
+.favourites-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--ks-page-color-bg);
+  scrollbar-width: none;
+}
+
+.favourites-content::-webkit-scrollbar {
+  display: none;
+}
+
+.favourites-frame .favourites-scrollbar {
+  position: absolute;
+  top: var(--ks-space-24);
+  right: 0;
+  bottom: 0;
+  width: var(--ks-space-1);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.favourites-scrollbar-thumb {
+  position: absolute;
+  right: 0;
+  width: var(--ks-space-1);
+  min-height: var(--ks-space-5);
+  background: var(--ks-color-ink-quiet);
+  border-radius: 0;
+  pointer-events: auto;
+  opacity: 0;
+  transition:
+    opacity var(--ks-motion-duration-base) var(--ks-motion-ease-out-quad),
+    background var(--ks-motion-duration-fast) var(--ks-motion-ease-out-quad);
+}
+
+.favourites-content:hover ~ .favourites-scrollbar .favourites-scrollbar-thumb {
+  opacity: 1;
+}
+
+.favourites-scrollbar-thumb:hover {
+  background: var(--ks-color-ink-mute);
+}

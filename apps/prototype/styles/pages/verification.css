@@ -1,0 +1,87 @@
+/* Verification page palette + layout. */
+
+[data-barba-namespace='verification'],
+.verification-page {
+  --ks-page-color-bg: #FFFEEB;
+  --ks-page-color-accent: #EEECD0;
+  --ks-page-color-tab-indicator: var(--ks-page-color-accent);
+}
+
+[data-barba-namespace='verification'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ks-page-color-accent);
+}
+
+.verification-page {
+  position: relative;
+  width: 400px;
+  height: 560px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--ks-space-14) var(--ks-space-10) var(--ks-space-10);
+  gap: var(--ks-space-4);
+  background: var(--ks-page-color-bg);
+  border-radius: var(--ks-radius-2xl);
+  overflow: hidden;
+}
+
+.verification-title {
+  font-family: var(--ks-font-family-display);
+  font-weight: var(--ks-font-weight-semibold);
+  font-size: var(--ks-font-size-2xl);
+  line-height: var(--ks-line-height-default);
+  color: var(--ks-palette-black);
+}
+
+.verification-inputs {
+  display: flex;
+  gap: var(--ks-space-1);
+  width: 100%;
+}
+
+.verification-inputs .kosmo-input {
+  flex: 1;
+  width: auto;
+  min-width: 0;
+}
+
+.verification-inputs .kosmo-input-face {
+  padding: var(--ks-space-3) var(--ks-space-1);
+}
+
+.verification-inputs .kosmo-input:focus-within .kosmo-input-face,
+.verification-inputs .kosmo-input.is-focused .kosmo-input-face {
+  padding: 11px 3px;
+}
+
+.verification-inputs .kosmo-input-field {
+  text-align: center;
+  font-size: var(--ks-font-size-4xl);
+  line-height: var(--ks-line-height-default);
+}
+
+.verification-resend {
+  font-family: var(--ks-font-family-body);
+  font-weight: var(--ks-font-weight-medium);
+  font-size: var(--ks-font-size-lg);
+  line-height: var(--ks-line-height-normal);
+  color: var(--ks-color-ink);
+  text-decoration: underline;
+}
+
+.verification-resend:hover {
+  color: var(--ks-color-ink);
+  opacity: 0.7;
+}
+
+.verification-doodle {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  left: -16px;
+  bottom: var(--ks-space-6);
+  transform: rotate(10.51deg);
+  pointer-events: none;
+}

@@ -1,0 +1,68 @@
+/* Color tokens — primitives + semantic aliases.
+   Primitives are raw values. Components and pages must reference semantic tokens
+   (--ks-color-*) only, never primitives directly. */
+
+:root {
+  /* ── Primitives ─────────────────────────────────────── */
+
+  --ks-palette-ink: #170e28;
+  --ks-palette-ink-a02: rgba(23, 14, 40, 0.02);
+  --ks-palette-ink-a03: rgba(23, 14, 40, 0.03);
+  --ks-palette-ink-a05: rgba(23, 14, 40, 0.05);
+  --ks-palette-ink-a06: rgba(23, 14, 40, 0.06);
+  --ks-palette-ink-a15: rgba(23, 14, 40, 0.15);
+  --ks-palette-ink-a30: rgba(23, 14, 40, 0.3);
+  --ks-palette-ink-a58: rgba(23, 14, 40, 0.58);
+
+  --ks-palette-white: #ffffff;
+  --ks-palette-black: #000000;
+  --ks-palette-overlay-soft: rgba(0, 0, 0, 0.03);
+  --ks-palette-overlay-medium: rgba(0, 0, 0, 0.06);
+
+  --ks-palette-error: #be1358;
+  --ks-palette-error-soft: rgba(190, 19, 88, 0.03);
+
+  /* App chrome (dark IDE shell around the prototype) */
+  --ks-palette-chrome-bg: #16161b;
+  --ks-palette-chrome-surface: #16161e;
+  --ks-palette-chrome-border: #2a2a3a;
+  --ks-palette-chrome-text: #e4e4ef;
+  --ks-palette-chrome-text-muted: #8888a0;
+  --ks-palette-chrome-accent: #6c63ff;
+  --ks-palette-chrome-accent-hover: #857eff;
+  --ks-palette-chrome-accent-subtle: rgba(108, 99, 255, 0.08);
+  --ks-palette-chrome-accent-active: rgba(108, 99, 255, 0.12);
+  --ks-palette-chrome-nav-bg: rgba(73, 73, 92, 0.85);
+
+  --ks-palette-gray-200: #e2e2e2;
+  --ks-palette-gray-500: #8c8c8c;
+  --ks-palette-gray-900: #191919;
+
+  /* ── Semantic aliases ──────────────────────────────── */
+
+  --ks-color-ink: var(--ks-palette-ink);
+  --ks-color-ink-soft: var(--ks-palette-ink-a58);
+  --ks-color-ink-mute: var(--ks-palette-ink-a30);
+  --ks-color-ink-quiet: var(--ks-palette-ink-a15);
+  --ks-color-ink-faint: var(--ks-palette-ink-a06);
+  --ks-color-ink-whisper: var(--ks-palette-ink-a05);
+  --ks-color-ink-haze: var(--ks-palette-ink-a03);
+  --ks-color-ink-mist: var(--ks-palette-ink-a02);
+
+  --ks-color-surface: var(--ks-palette-white);
+  --ks-color-on-surface: var(--ks-palette-ink);
+  --ks-color-border: var(--ks-palette-gray-200);
+  --ks-color-overlay-soft: var(--ks-palette-overlay-soft);
+  --ks-color-overlay-medium: var(--ks-palette-overlay-medium);
+
+  --ks-color-danger: var(--ks-palette-error);
+  --ks-color-danger-soft: var(--ks-palette-error-soft);
+
+  --ks-color-focus-ring: var(--ks-palette-ink);
+
+  /* Page palette — overridden per page via [data-page] root.
+     These provide backgrounds + accents for the current page surface. */
+  --ks-page-color-bg: var(--ks-palette-white);
+  --ks-page-color-accent: var(--ks-palette-ink);
+  --ks-page-color-tab-indicator: var(--ks-palette-ink);
+}

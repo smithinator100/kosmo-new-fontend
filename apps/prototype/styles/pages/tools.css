@@ -1,0 +1,51 @@
+/* Tools page palette + layout. */
+
+[data-barba-namespace='tools'],
+.tools-page,
+.tools-frame {
+  --ks-page-color-bg: #ffffff;
+  --ks-page-color-accent: #2266e5;
+  --ks-page-color-tab-indicator: var(--ks-page-color-accent);
+}
+
+[data-barba-namespace='tools'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #D0E4F7;
+}
+
+.tools-page {
+  display: flex;
+  gap: var(--ks-space-8);
+  flex-wrap: wrap;
+}
+
+.tools-frame {
+  width: 400px;
+  height: 560px;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--ks-radius-2xl);
+  border: 1px solid var(--ks-color-ink-faint);
+  overflow: hidden;
+  position: relative;
+  background: var(--ks-page-color-bg);
+}
+
+.tools-frame .kosmo-tab-bar {
+  background: var(--ks-page-color-bg);
+}
+
+.tools-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--ks-page-color-bg);
+  scrollbar-width: none;
+}
+
+.tools-content::-webkit-scrollbar {
+  display: none;
+}

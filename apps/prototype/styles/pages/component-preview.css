@@ -1,0 +1,32 @@
+/* Sandbox surface used by every component preview page (button.html,
+   input.html, tab-bar.html, list-item.html, search-input.html, sub-header.html).
+
+   The docs surface stands in for "no page palette" — accent is set to the
+   surface color (white) so depth-stack components like Primary Button keep a
+   readable ink-on-white face, while the tab indicator stays ink so the active
+   tab line is visible against the white card. */
+
+[data-barba-namespace='button'],
+[data-barba-namespace='input'],
+[data-barba-namespace='tab-bar'],
+[data-barba-namespace='list-item'],
+[data-barba-namespace='search-input'],
+[data-barba-namespace='sub-header'] {
+  --ks-page-color-bg: var(--ks-color-surface);
+  --ks-page-color-accent: var(--ks-color-surface);
+  --ks-page-color-tab-indicator: var(--ks-color-ink);
+}
+
+.component-preview-canvas {
+  width: 400px;
+  background: var(--ks-color-surface);
+}
+
+.component-preview-canvas--rounded-top {
+  border-radius: var(--ks-radius-md) var(--ks-radius-md) 0 0;
+}
+
+.component-preview-canvas--rounded {
+  border-radius: var(--ks-radius-md);
+  overflow: hidden;
+}

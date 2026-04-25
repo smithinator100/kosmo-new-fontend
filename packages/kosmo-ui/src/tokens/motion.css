@@ -1,0 +1,43 @@
+/* Motion tokens — durations and easings.
+   Easings mirror the EASING_OPTIONS table used by the prototype's animation
+   panel so design controls and tokens stay in sync. */
+
+:root {
+  /* ── Durations ────────────────────────────────────── */
+
+  --ks-motion-duration-instant: 100ms;
+  --ks-motion-duration-fast: 150ms;
+  --ks-motion-duration-base: 200ms;
+  --ks-motion-duration-slow: 300ms;
+  --ks-motion-duration-slower: 400ms;
+
+  /* ── Easings ──────────────────────────────────────── */
+
+  --ks-motion-ease-linear: linear;
+
+  --ks-motion-ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --ks-motion-ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ks-motion-ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+
+  --ks-motion-ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ks-motion-ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ks-motion-ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+
+  --ks-motion-ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --ks-motion-ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ks-motion-ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+
+  /* ── Defaults ─────────────────────────────────────── */
+
+  --ks-motion-default: var(--ks-motion-duration-base) var(--ks-motion-ease-in-out-cubic);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ks-motion-duration-instant: 0.01ms;
+    --ks-motion-duration-fast: 0.01ms;
+    --ks-motion-duration-base: 0.01ms;
+    --ks-motion-duration-slow: 0.01ms;
+    --ks-motion-duration-slower: 0.01ms;
+  }
+}

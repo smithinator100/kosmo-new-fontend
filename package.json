@@ -3,18 +3,20 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev": "npm run dev --workspace=apps/prototype",
+    "build": "npm run build --workspace=packages/kosmo-ui && npm run build --workspace=apps/prototype",
+    "build:ui": "npm run build --workspace=packages/kosmo-ui",
+    "build:prototype": "npm run build --workspace=apps/prototype",
+    "preview": "npm run preview --workspace=apps/prototype",
+    "test": "npm run test --workspace=packages/kosmo-ui",
+    "typecheck": "npm run typecheck --workspaces --if-present"
   },
   "devDependencies": {
-    "playwright": "^1.58.2",
-    "typescript": "~5.9.3",
-    "vite": "^7.3.1"
-  },
-  "dependencies": {
-    "@barba/core": "^2.10.3",
-    "lucide": "^0.577.0"
+    "typescript": "~5.9.3"
   }
 }
