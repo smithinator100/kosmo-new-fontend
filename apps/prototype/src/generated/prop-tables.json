@@ -1,5 +1,35 @@
 [
   {
+    "name": "app-bar",
+    "displayName": "AppBar",
+    "props": [
+      {
+        "name": "title",
+        "type": "string | HTMLElement",
+        "optional": true,
+        "description": "Centered title — usually a short version label (`\"v1.0\"`) or page name.\nPass an HTMLElement to render rich content (e.g. an icon + text). Omit\nfor an actions-only bar."
+      },
+      {
+        "name": "leading",
+        "type": "AppBarIconAction",
+        "optional": true,
+        "description": "Leading action slot (typically `chevron-left` for \"back\")."
+      },
+      {
+        "name": "trailing",
+        "type": "readonly AppBarIconAction[]",
+        "optional": true,
+        "description": "Trailing action slots, rendered left-to-right."
+      },
+      {
+        "name": "ariaLabel",
+        "type": "string",
+        "optional": false,
+        "description": "Required `aria-label` for the bar's `role=\"toolbar\"` landmark — describes\nwhat scope the actions operate on (e.g. `\"Plugin actions\"`)."
+      }
+    ]
+  },
+  {
     "name": "button",
     "displayName": "Button",
     "props": [

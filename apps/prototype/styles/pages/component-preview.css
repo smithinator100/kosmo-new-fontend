@@ -11,7 +11,8 @@
 [data-barba-namespace='tab-bar'],
 [data-barba-namespace='list-item'],
 [data-barba-namespace='search-input'],
-[data-barba-namespace='sub-header'] {
+[data-barba-namespace='sub-header'],
+[data-barba-namespace='app-bar'] {
   --ks-page-color-bg: var(--ks-color-surface);
   --ks-page-color-accent: var(--ks-color-surface);
   --ks-page-color-tab-indicator: var(--ks-color-ink);

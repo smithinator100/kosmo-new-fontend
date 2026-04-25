@@ -21,3 +21,4 @@ export * from './components/tab-bar/index.ts';
 export * from './components/list-item/index.ts';
 export * from './components/search/index.ts';
 export * from './components/sub-header/index.ts';
+export * from './components/app-bar/index.ts';

@@ -5,6 +5,7 @@
 
 import {
   createIcons,
+  ChevronLeft,
   ChevronRight,
   ClipboardPaste,
   Copy,
@@ -19,6 +20,8 @@ import {
   Shapes,
   Skull,
   Sparkles,
+  Star,
+  Trash2,
   Type,
   Wand2,
   Wrench,
@@ -26,6 +29,7 @@ import {
 } from 'lucide';
 
 export const ICONS = {
+  ChevronLeft,
   ChevronRight,
   ClipboardPaste,
   Copy,
@@ -40,6 +44,8 @@ export const ICONS = {
   Shapes,
   Skull,
   Sparkles,
+  Star,
+  Trash2,
   Type,
   Wand2,
   Wrench,

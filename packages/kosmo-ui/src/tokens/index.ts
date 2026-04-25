@@ -22,6 +22,8 @@ export const colorTokens = {
   overlayMedium: '--ks-color-overlay-medium',
   danger: '--ks-color-danger',
   dangerSoft: '--ks-color-danger-soft',
+  favouriteFill: '--ks-color-favourite-fill',
+  favouriteStroke: '--ks-color-favourite-stroke',
   focusRing: '--ks-color-focus-ring',
   pageBg: '--ks-page-color-bg',
   pageAccent: '--ks-page-color-accent',

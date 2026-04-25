@@ -48,6 +48,7 @@ const VIEW_TITLES: Record<string, string> = {
   'list-item': 'List item - KOSMO',
   'search-input': 'Search input - KOSMO',
   'sub-header': 'Sub-header - KOSMO',
+  'app-bar': 'App-bar - KOSMO',
   docs: 'Docs - KOSMO',
   tools: 'Tools - KOSMO',
   settings: 'Settings - KOSMO',

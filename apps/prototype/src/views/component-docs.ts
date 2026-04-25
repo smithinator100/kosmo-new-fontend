@@ -13,6 +13,7 @@
  */
 
 import {
+  createAppBar,
   createButton,
   createInput,
   createListItem,
@@ -193,6 +194,56 @@ const EXAMPLES: Record<string, ExampleSpec[]> = {
       factorySnippet: "createSubHeader({ label: 'INTERNAL', as: 'div' })",
       htmlSnippet: `<div class="kosmo-sub-header">INTERNAL</div>`,
       build: () => createSubHeader({ label: 'INTERNAL', as: 'div' }).el,
+    },
+  ],
+  'app-bar': [
+    {
+      label: 'Plugin actions · favourite + delete',
+      factorySnippet:
+        "createAppBar({\n" +
+        "  ariaLabel: 'Plugin actions',\n" +
+        "  leading: { icon: 'chevron-left', ariaLabel: 'Back' },\n" +
+        "  title: 'v1.0',\n" +
+        "  trailing: [\n" +
+        "    { icon: 'star', ariaLabel: 'Remove from favourites', tone: 'favourite' },\n" +
+        "    { icon: 'trash-2', ariaLabel: 'Delete plugin' },\n" +
+        "  ],\n" +
+        "})",
+      htmlSnippet:
+        `<div class="kosmo-app-bar" role="toolbar" aria-label="Plugin actions">\n` +
+        `  <button class="kosmo-app-bar__icon-btn kosmo-app-bar__icon-btn--default" aria-label="Back">\n` +
+        `    <i data-lucide="chevron-left"></i>\n` +
+        `  </button>\n` +
+        `  <span class="kosmo-app-bar__title">v1.0</span>\n` +
+        `  <button class="kosmo-app-bar__icon-btn kosmo-app-bar__icon-btn--favourite" aria-label="Remove from favourites">\n` +
+        `    <i data-lucide="star"></i>\n` +
+        `  </button>\n` +
+        `  <button class="kosmo-app-bar__icon-btn kosmo-app-bar__icon-btn--default" aria-label="Delete plugin">\n` +
+        `    <i data-lucide="trash-2"></i>\n` +
+        `  </button>\n` +
+        `</div>`,
+      build: () =>
+        withCanvas(
+          createAppBar({
+            ariaLabel: 'Plugin actions',
+            leading: { icon: 'chevron-left', ariaLabel: 'Back' },
+            title: 'v1.0',
+            trailing: [
+              { icon: 'star', ariaLabel: 'Remove from favourites', tone: 'favourite' },
+              { icon: 'trash-2', ariaLabel: 'Delete plugin' },
+            ],
+          }).el,
+        ),
+    },
+    {
+      label: 'Title only',
+      factorySnippet: "createAppBar({ ariaLabel: 'Plugin actions', title: 'Settings' })",
+      htmlSnippet:
+        `<div class="kosmo-app-bar" role="toolbar" aria-label="Plugin actions">\n` +
+        `  <span class="kosmo-app-bar__title">Settings</span>\n` +
+        `</div>`,
+      build: () =>
+        withCanvas(createAppBar({ ariaLabel: 'Plugin actions', title: 'Settings' }).el),
     },
   ],
 };

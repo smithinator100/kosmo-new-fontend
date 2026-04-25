@@ -22,6 +22,10 @@
   --ks-palette-error: #be1358;
   --ks-palette-error-soft: rgba(190, 19, 88, 0.03);
 
+  /* Categorical accents — used by status / affordance icons (e.g. favourite star). */
+  --ks-palette-favourite-fill: #fce37e;
+  --ks-palette-favourite-stroke: #ffcc00;
+
   /* App chrome (dark IDE shell around the prototype) */
   --ks-palette-chrome-bg: #16161b;
   --ks-palette-chrome-surface: #16161e;
@@ -57,6 +61,9 @@
 
   --ks-color-danger: var(--ks-palette-error);
   --ks-color-danger-soft: var(--ks-palette-error-soft);
+
+  --ks-color-favourite-fill: var(--ks-palette-favourite-fill);
+  --ks-color-favourite-stroke: var(--ks-palette-favourite-stroke);
 
   --ks-color-focus-ring: var(--ks-palette-ink);
 

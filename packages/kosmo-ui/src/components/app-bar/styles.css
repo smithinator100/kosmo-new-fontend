@@ -1,0 +1,81 @@
+/* Kosmo App Bar — leading action · centered title · trailing actions.
+   Uses page-palette tokens for surface so it inherits the host page's
+   background, with a fallback to the global surface token. */
+
+.kosmo-app-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ks-space-1);
+  width: 100%;
+  padding: var(--ks-space-2-5) var(--ks-space-3);
+  background: var(--ks-page-color-bg, var(--ks-color-surface));
+  overflow: clip;
+  font-family: var(--ks-text-ui-family);
+  font-size: var(--ks-text-ui-size);
+  font-weight: var(--ks-text-ui-weight);
+  line-height: var(--ks-text-ui-line-height);
+  color: var(--ks-color-ink);
+}
+
+.kosmo-app-bar__title {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  color: var(--ks-color-ink);
+  font-family: var(--ks-text-ui-family);
+  font-size: var(--ks-text-ui-size);
+  font-weight: var(--ks-text-ui-weight);
+  line-height: var(--ks-text-ui-line-height);
+  margin: 0;
+}
+
+/* ── Icon-button slot ────────────────────────────────── */
+
+.kosmo-app-bar__icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: var(--ks-space-1);
+  border: none;
+  border-radius: var(--ks-radius-sm);
+  background: none;
+  color: var(--ks-color-ink);
+  cursor: pointer;
+  transition: background var(--ks-motion-duration-fast) var(--ks-motion-ease-out-quad);
+}
+
+.kosmo-app-bar__icon-btn [data-lucide] {
+  width: var(--ks-space-5);
+  height: var(--ks-space-5);
+}
+
+.kosmo-app-bar__icon-btn:hover,
+.kosmo-app-bar__icon-btn.is-hover {
+  background: var(--ks-color-ink-whisper);
+}
+
+.kosmo-app-bar__icon-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--ks-focus-ring);
+}
+
+.kosmo-app-bar__icon-btn[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Hidden spacer slot — used to balance a leading action so the centered
+   title stays optically centered even when only one side has actions. */
+.kosmo-app-bar__icon-btn.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Tone: favourite (filled star, etc.) ─────────────── */
+
+.kosmo-app-bar__icon-btn--favourite [data-lucide] {
+  color: var(--ks-color-favourite-stroke);
+  fill: var(--ks-color-favourite-fill);
+}
